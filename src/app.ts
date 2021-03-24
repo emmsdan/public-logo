@@ -1,8 +1,11 @@
 import cookieParser from "cookie-parser";
 import express from "express";
-import Controller from "./interface/controller.interface";
 import { Server } from 'http';
+import dotenv from 'dotenv'
+import Controller from "./interface/controller.interface";
 import IServices, { IService} from "./interface/service.interface";
+
+dotenv.config();
 
 class App {
   public app: express.Application;

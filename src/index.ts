@@ -1,5 +1,5 @@
 import App from "./app";
-import Contact from "./controller/contact";
+import Contact from "./controller/logos";
 import LiveEvents from "./services/socket";
 
 const Module = new App("myContaxt");
@@ -12,7 +12,7 @@ Module.Controllers([new Contact()]);
 
 // register services
 Module.Services([
-    { name: 'LiveEvents', handler: LiveEvents }
+    { name: 'LiveEvents', handler: LiveEvents },
 ])
 
 // start app server
