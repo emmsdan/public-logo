@@ -1305,5 +1305,12 @@
     "filename": "tix_africa",
     "url": "https://tix.africa",
     "category": [ "Event Management" ]
-  }
+  },{
+  "title": "Woven Finance",
+  "filename": "woven_finance",
+  "url": "http://woven.finance",
+  "category": [
+    "Finance", "Fintech"
+  ]
+}
 ]
