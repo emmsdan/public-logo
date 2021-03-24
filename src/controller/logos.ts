@@ -35,6 +35,7 @@ export default class Logos extends  BaseController implements Controller {
     filePath = path.join( __dirname, '../assets/logos.json')
     logosDir = path.join(__dirname, '../assets/logos');
     notFoundLogo = path.join(__dirname, '../assets/logos/not_found/not_found.svg')
+    fields = ['filename', 'title', 'url']
 
     @Get("")
     async get({params}: IRequest, res: Response) {
@@ -57,7 +58,7 @@ export default class Logos extends  BaseController implements Controller {
                 if (typeof file !== 'string') {
                     return res.sendFile(this.notFoundLogo);
                 }
-                const  data = await searchArrayOfObject(img, ['filename', 'title'], JSON.parse(file))
+                const  data = await searchArrayOfObject(img, this.fields, JSON.parse(file))
                 if (data.length >= 1) {
                     const image = data[0].item.filename;
                     const filename = `${this.logosDir }/${image}/${image}.${type}`;
@@ -79,7 +80,7 @@ export default class Logos extends  BaseController implements Controller {
             res.status(400).json(file);
             return;
         }
-        const  data = await searchArrayOfObject(search, ['filename', 'title'], JSON.parse(file))
+        const  data = await searchArrayOfObject(search, this.fields, JSON.parse(file))
         if (data.length <= 0) {
             return res.json([{
                 item: {
