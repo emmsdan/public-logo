@@ -1305,12 +1305,21 @@
     "filename": "tix_africa",
     "url": "https://tix.africa",
     "category": [ "Event Management" ]
-  },{
-  "title": "Woven Finance",
-  "filename": "woven_finance",
-  "url": "http://woven.finance",
-  "category": [
-    "Finance", "Fintech"
-  ]
-}
+  },
+  {
+    "title": "Woven Finance",
+    "filename": "woven_finance",
+    "url": "http://woven.finance",
+    "category": [
+      "Finance", "Fintech"
+    ]
+  },
+  {
+    "title": "Sparkle Microfinance Bank Limited Nigeria",
+    "filename": "sparkle_bank",
+    "url": "https://sparkle.ng/",
+    "category": [
+      "Finance", "Fintech"
+    ]
+  }
 ]
