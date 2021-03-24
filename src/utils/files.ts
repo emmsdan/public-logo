@@ -14,7 +14,7 @@ export const searchArrayOfObject = async (key:string, fields: string[], obj: obj
     try {
         const options = {
             includeScore: true,
-            minMatchCharLength: 3,
+            // minMatchCharLength: 3,
             threshold: 0.1,
             useExtendedSearch: true,
             keys: fields

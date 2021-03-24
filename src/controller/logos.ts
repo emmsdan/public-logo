@@ -52,6 +52,19 @@ export default class Logos extends  BaseController implements Controller {
             const filename = `${this.logosDir }/${img}/${img}.${type}`;
             if (fs.existsSync(filename)) {
                 return res.sendFile(filename);
+            } else {
+                const file = await getFileContent(this.filePath);
+                if (typeof file !== 'string') {
+                    return res.sendFile(this.notFoundLogo);
+                }
+                const  data = await searchArrayOfObject(img, ['filename', 'title'], JSON.parse(file))
+                if (data.length >= 1) {
+                    const image = data[0].item.filename;
+                    const filename = `${this.logosDir }/${image}/${image}.${type}`;
+                    if (fs.existsSync(filename)) {
+                        return res.sendFile(filename);
+                    }
+                }
             }
             return res.sendFile(this.notFoundLogo);
         } catch (e) {
@@ -63,16 +76,18 @@ export default class Logos extends  BaseController implements Controller {
     async bulkGet({params: { search }}: IRequest, res: Response) {
         const file = await getFileContent(this.filePath);
         if (typeof file !== 'string') {
-            res.json(file);
+            res.status(400).json(file);
             return;
         }
         const  data = await searchArrayOfObject(search, ['filename', 'title'], JSON.parse(file))
         if (data.length <= 0) {
             return res.json([{
-                "title": `No search found for key ('${search}')`,
-                "filename": "not_found.png",
-                "url": "http://www.emmsdan.com/",
-                "category": [404, 'not_found']
+                item: {
+                    "title": `No search found for key ('${search}')`,
+                    "filename": "not_found.png",
+                    "url": "http://www.emmsdan.com/",
+                    "category": [404, 'not_found']
+                }
             }])
         }
         res.json(data);
