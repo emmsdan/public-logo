@@ -35,7 +35,7 @@ export default class Logos extends  BaseController implements Controller {
     filePath = path.join( __dirname, '../assets/logos.json')
     logosDir = path.join(__dirname, '../assets/logos');
     notFoundLogo = path.join(__dirname, '../assets/logos/not_found/not_found.svg')
-    fields = ['filename', 'title', 'url']
+    fields = ['filename', 'title', 'url', 'alternative']
 
     @Get("")
     async get({params}: IRequest, res: Response) {

@@ -70,6 +70,7 @@
   },
   {
     "title": "Guaranty Trust Bank GTB",
+    "alternative": "gtbank plc",
     "filename": "guaranty_trust_bank",
     "url": "https://www.gtbank.com/",
     "category": [
@@ -567,7 +568,8 @@
     ]
   },
   {
-    "title": "First Bank Nigeria",
+    "title": "First Bank of Nigeria",
+    "alternative": "fbn",
     "filename": "first_bank",
     "url": "https://www.firstbanknigeria.com/",
     "category": [
@@ -1326,6 +1328,14 @@
     "title": "Providus Bank",
     "filename": "providus_bank",
     "url": "https://www.providusbank.com/",
+    "category": [
+      "Finance", "Banking", "Fintech"
+    ]
+  },
+  {
+    "title": "Coronation Merchant Bank",
+    "filename": "coronation_merchant_bank",
+    "url": "https://www.coronationmb.com/",
     "category": [
       "Finance", "Banking", "Fintech"
     ]
