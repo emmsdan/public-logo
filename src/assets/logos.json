@@ -1321,5 +1321,13 @@
     "category": [
       "Finance", "Fintech"
     ]
+  },
+  {
+    "title": "Providus Bank",
+    "filename": "providus_bank",
+    "url": "https://www.providusbank.com/",
+    "category": [
+      "Finance", "Banking", "Fintech"
+    ]
   }
 ]

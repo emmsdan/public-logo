@@ -17,7 +17,8 @@ export const searchArrayOfObject = async (key:string, fields: string[], obj: obj
             // minMatchCharLength: 3,
             threshold: 0.3,
             useExtendedSearch: true,
-            keys: fields
+            ignoreLocation: true,
+            keys: fields,
         }
         const fuse = new Fuse(obj, options);
         return fuse.search(key);
