@@ -1,6 +1,6 @@
 {
   "name": "public-logo-api",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "simple app to save and sync contacts across multiple devices",
   "license": "MS-PL",
   "private": false,
